@@ -21,10 +21,10 @@ function bfs(rootNode, vert, edges) {
       queue = queue.concat(adjacent)
   }
 
-  return order;
+  return order
 }
 
-function findAdjacent(street, vert, edges){
+function findAdjacent(street, vert, edges) {
   return edges
           .filter(edge => edge.includes(street))
           .map(edge => edge.filter(node => node != street)[0])
@@ -32,13 +32,13 @@ function findAdjacent(street, vert, edges){
           .filter(node => node.distance == null)
 }
 
-function markDistanceAndPredecessor(pre, adjacents){
+function markDistanceAndPredecessor(pre, adjacents) {
   adjacents.map(node => {
     node.distance = pre.distance + 1
-    node.predecessor = pre;
+    node.predecessor = pre
   })
 }
 
 function findNode(street, vertices) {
-  return vertices.find(vert => vert.name == street);
+  return vertices.find(vert => vert.name == street)
 }
